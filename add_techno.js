@@ -14,7 +14,7 @@ addTechnoForm.addEventListener('submit', evt => {
         unsynced: true,
     }
 
-    fetch('http://localhost:3001/technos', {
+    fetch('https://pwa-veillle-techno.vercel.app/technos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

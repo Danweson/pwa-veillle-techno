@@ -38,23 +38,23 @@ self.addEventListener('activate', (evt) => {
     evt.waitUntil(cacheCleanedPromise);
 });
 
-self.addEventListener('fetch', (evt) => {
-    if(!navigator.onLine) {
-        const headers = { headers: { 'Content-Type': 'text/html;charset=utf-8'} };
-        evt.respondWith(new Response('<h1>Pas de connexion internet</h1><div>Apllication en mode dégradé. Veuillez vous connecter</div>', headers));
-    }
+// self.addEventListener('fetch', (evt) => {
+//     if(!navigator.onLine) {
+//         const headers = { headers: { 'Content-Type': 'text/html;charset=utf-8'} };
+//         evt.respondWith(new Response('<h1>Pas de connexion internet</h1><div>Apllication en mode dégradé. Veuillez vous connecter</div>', headers));
+//     }
 
-    // always serving css from the cache
-    if(evt.request.url.includes('css')) {
-        caches.open(cacheName).then(cache => {
-            console.log('servi depuis le cache', evt.request.url);
-            cache.match(evt.request);
-        })
-    } else {
-        console.log('fetch request passée à internet', evt.request.url);
-        evt.respondWith(fetch(evt.request));
-    } 
-});
+//     // always serving css from the cache
+//     if(evt.request.url.includes('css')) {
+//         caches.open(cacheName).then(cache => {
+//             console.log('servi depuis le cache', evt.request.url);
+//             cache.match(evt.request);
+//         })
+//     } else {
+//         console.log('fetch request passée à internet', evt.request.url);
+//         evt.respondWith(fetch(evt.request));
+//     } 
+// });
 
 // network first strategy
 self.addEventListener('fetch', evt => {
@@ -120,7 +120,7 @@ self.addEventListener('sync', event => {
 
                 return Promise.all(unsynced.map(techno => {
                     console.log('Attempting fetch', techno);
-                    fetch('https://danweson.github.io/pwa-veillle-techno/technos', {
+                    fetch('https://pwa-veillle-techno.vercel.app/technos', {
                         headers: {
                             'Accept': 'application/json',
                             'Content-Type': 'application/json'
