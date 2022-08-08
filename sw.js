@@ -120,7 +120,7 @@ self.addEventListener('sync', event => {
 
                 return Promise.all(unsynced.map(techno => {
                     console.log('Attempting fetch', techno);
-                    fetch('http://localhost:3001/technos', {
+                    fetch('https://danweson.github.io/pwa-veillle-techno/technos', {
                         headers: {
                             'Accept': 'application/json',
                             'Content-Type': 'application/json'

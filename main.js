@@ -2,7 +2,7 @@ const technosDiv = document.querySelector('#technos');
 
 function loadTechnologies(technos) {
     // fetching from real node server
-    fetch('http://localhost:3001/technos')
+    fetch('https://danweson.github.io/pwa-veillle-techno/technos')
         .then(response => response.json())
         .then(technos => {
             console.log('response from loadTechnologies', technos);
