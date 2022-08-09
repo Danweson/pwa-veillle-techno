@@ -120,7 +120,7 @@ self.addEventListener('sync', event => {
 
                 return Promise.all(unsynced.map(techno => {
                     console.log('Attempting fetch', techno);
-                    fetch('https://pwa-veillle-techno.vercel.app/technos', {
+                    fetch('https://json-server-heroku-hosting2.herokuapp.com/technos', {
                         headers: {
                             'Accept': 'application/json',
                             'Content-Type': 'application/json'

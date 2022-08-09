@@ -2,7 +2,7 @@ const technosDiv = document.querySelector('#technos');
 
 function loadTechnologies(technos) {
     // fetching from real node server
-    fetch('https://pwa-veillle-techno.vercel.app/technos')
+    fetch('https://json-server-heroku-hosting2.herokuapp.com/technos')
         .then(response => response.json())
         .then(technos => {
             console.log('response from loadTechnologies', technos);
