@@ -1,4 +1,3 @@
-console.log('Hello frow Service Worker')
 const cacheName = 'Danson Tech Inc. ' + '1.3.2';
 
 self.importScripts('idb.js', 'database.js');

@@ -16,9 +16,13 @@ function loadTechnologies(technos) {
             technosDiv.innerHTML = allTechnos;
         })
         .catch(console.error);
+
+        console.log(technos);
 }
 
 loadTechnologies(technos);
+
+console.log(loadTechnologies);
 
 // retrieved from https://github.com/web-push-libs/web-push readme
 // and used to convert base64 string to Uint8Array == to an array buffer
